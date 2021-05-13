@@ -1,0 +1,92 @@
+<head>
+       <!-- Bootstrap 3 -->
+       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+       <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+       <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</head>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+</head>
+
+        <button (click)="backClicked()" class="btn btn-info" style="margin-left: 10px">Home</button>
+        <button (click)="logout()" class="btn btn-info" style="margin-left: 10px"><b>Logout</b></button>
+    
+
+        <div class="col-md-6 col-lg-4">
+  <!-- Main Page Content -->
+  <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Personal Info</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+
+  <div class="container">
+<div *ngIf="user">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="a80x06Wn91U" data-toggle="modal" data-target="#trailer">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPyGNr2qL63Sfugk2Z1-KBEwMGOfycBribew&usqp=CAU" width="220" height="342">
+  <h2>{{user.uname}}</h2>
+  <h5><b>Phone No : </b> {{user.phone}} </h5>
+  <h5><b>Email : </b>{{user.emailId}} </h5>
+</div>
+</div>
+</div>
+
+  </div>
+   
+
+ <!-- Main Page Content -->
+ <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Update Details</a>
+        </div>
+      </div>
+    </div>
+  
+  
+    <div class="global-container">
+	<div class="card login-form">
+	<div class="card-body">
+		<h3 class="card-title text-center">Login</h3>
+		<div class="card-text">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">User Name :</label>
+      <input type="text" class="form-control" id="uname" required [(ngModel)]="user.uname" name="uname">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Email ID:</label>
+      <input type="text" class="form-control" id="emailId" required [(ngModel)]="user.emailId" name="emailId">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Phone No:</label>
+      <input type="text" class="form-control" id="phone" required [(ngModel)]="user.phone" name="phone">
+    </div>
+     <div class="form-group">
+      <label for="name">Password : </label>
+      <input type="text" class="form-control" id="password" required [(ngModel)]="user.password" name="password">
+    </div>
+    <button type="submit" class="btn btn-success">Update</button>
+  </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+

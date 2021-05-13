@@ -1,0 +1,44 @@
+
+ <head
+ ><!-- Bootstrap 3 -->
+ <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+ <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+ <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+ 
+</head>
+
+
+        <button (click)="backClicked()" class="btn btn-info" style="margin-left: 10px"><b>Home</b></button>
+        <button (click)="logout()" class="btn btn-info" style="margin-left: 10px"><b>Logout</b></button>
+
+  
+<!--Movie heading-->
+<div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Movie Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+
+<!--Movie list-->
+<div *ngIf="movies">
+    <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="a80x06Wn91U" data-toggle="modal" data-target="#trailer">
+        <img src="http://www.hollywoodmoviejerseys.com/uploads/1/0/2/3/10237892/3921667.jpg" width="210" height="200">
+        <h2>{{movies.mname}}</h2>
+        <h4><b>Language: </b> {{movies.mlang}} </h4>
+        <h5><b>Description : </b> {{movies.mdesc}}</h5>
+        <h5><b>Movie Type : </b> {{movies.mtype}} </h5>
+        <h5><b>Director: </b> Jay Roach </h5>
+        <h5><b>Category: </b> Drama/Sport </h5>
+        <button (click)="bookMovie(movies.mid)" class="btn btn-danger">Book</button>
+        <button (click)="addReview(movies.mid)" class="btn btn-info" style="margin-left: 10px">Review</button>
+       
+    </div>
+</div>
+

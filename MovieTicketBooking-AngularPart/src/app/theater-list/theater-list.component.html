@@ -1,0 +1,36 @@
+ <head>
+ <!-- Bootstrap 3 -->
+ <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+ <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+ <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</head>
+
+
+        <button (click)="backClicked()" class="btn btn-info" style="margin-left: 10px">Home</button>
+        <button (click)="logout()" class="btn btn-info" style="margin-left: 10px"><b>Logout</b></button>
+    
+
+
+
+    <!-- Main Page Content -->
+    <div class="container">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Theater List</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div *ngFor="let theaters of theater | async">
+  <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="a80x06Wn91U" data-toggle="modal" data-target="#trailer">
+      <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/13f95112469289.5626a1e558c16.png" width="220" height="242">
+      <h2>{{theaters.tname}}</h2>
+      <h3><b>Theater ID : </b>{{theaters.tid}}</h3>
+      <h5><b>Place: </b> {{theaters.tplace}} </h5>
+      
+  </div>
+  </div>
+  </div>

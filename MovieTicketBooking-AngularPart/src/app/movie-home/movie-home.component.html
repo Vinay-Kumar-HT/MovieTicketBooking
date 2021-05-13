@@ -1,0 +1,54 @@
+ 
+ <head
+ ><!-- Bootstrap 3 -->
+ <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+ <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+ <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+ 
+</head>
+
+<div >
+    <button (click)="viewAllReview()" class="btn btn-info" style="margin-left: 10px"><b>View Reviews</b></button>
+
+    <button (click)="viewUser()" class="btn btn-info" style="margin-left: 10px"><b>Personal Info</b></button>
+
+    <button (click)="theaterList()" class="btn btn-info" style="margin-left: 10px"><b>Theaters List</b></button>
+
+    <button (click)="viewBooking()" class="btn btn-info" style="margin-left: 10px"><b>View Ticket</b></button>
+    
+    <button (click)="logout()" class="btn btn-info" style="margin-left: 10px"><b>Logout</b></button>
+
+  </div>
+<div>
+<!--Movie heading-->
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Movie Lists</a>
+        </div>
+      </div>
+  
+  </div>
+  <div class="container">
+
+<!--Movie list-->
+<div *ngFor="let movie of movies | async">
+    <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="a80x06Wn91U" data-toggle="modal" data-target="#trailer">
+        <img src="http://www.hollywoodmoviejerseys.com/uploads/1/0/2/3/10237892/3921667.jpg" width="210" height="200">
+        <h2>{{movie.mname}}</h2>
+        <h5><b>Language: </b> {{movie.mlang}} </h5>
+        <h5><b>Director: </b> Jay Roach </h5>
+        <h5><b>Category: </b> Drama/Sport </h5>
+        <button (click)="bookMovie(movie.mid)" class="btn btn-danger">Book</button>
+        <button (click)="addReview(movie.mid)" class="btn btn-info" style="margin-left: 10px">Review</button>
+        <button (click)="movieDetails(movie.mid)" class="btn btn-warning" style="margin-left: 10px">Details</button>
+         
+    </div>
+</div>
+</div>
+
+
+</div>

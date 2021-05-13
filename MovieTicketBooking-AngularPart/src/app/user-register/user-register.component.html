@@ -1,0 +1,43 @@
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+</head>
+
+<div class="global-container">
+	<div class="card login-form">
+	<div class="card-body">
+		<h3 class="card-title text-center">Register</h3>
+		<div class="card-text">
+
+  <form   (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="uid">User Id:</label>
+        <input type="text" class="form-control form-control-sm"  id="uid" placeholder="User ID"  required [(ngModel)]="user.uid" name="uid">
+      </div>
+    <div class="form-group">
+      <label for="uname">User Name:</label>
+      <input type="text" class="form-control form-control-sm" placeholder="User Name"   id="uname" required [(ngModel)]="user.uname" name="uname">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control form-control-sm"  placeholder="Password" id="password" required [(ngModel)]="user.password" name="password">
+    </div>
+
+    <div class="form-group">
+      <label for="emailId">Email Id:</label>
+      <input type="text"class="form-control form-control-sm" id="emailId"  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" placeholder="xyz@gmail.com" required [(ngModel)]="user.emailId" name="emailId">
+    </div>
+    <div class="form-group">
+        <label for="Phone">Phone No:</label>
+        <input type="number"class="form-control form-control-sm" placeholder="Phone number" minlength="10" maxlength="10" pattern="[7-9]{1}[0-9]{9}" id="phone" required [(ngModel)]="user.phone" name="phone">
+      </div>
+    <button type="submit" class="btn btn-primary btn-block" >Submit</button>
+  </form>
+</div>
+
+	</div>
+</div>
+</div>

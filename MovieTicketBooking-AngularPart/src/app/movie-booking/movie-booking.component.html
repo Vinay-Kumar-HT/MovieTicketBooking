@@ -1,0 +1,56 @@
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+</head>
+<div class="col-sm-6 col-md-6 col-lg-4">
+<div class="global-container">
+	<div class="card login-form">
+	<div class="card-body">
+		<h3 class="card-title text-center">Book Movie</h3>
+		<div class="card-text">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="uid">User Id:</label>
+        <input type="text" class="form-control form-control-sm"id="uid" required [(ngModel)]="booking.uid" name="uid">
+      </div>
+    <div class="form-group">
+        <label for="bdate">Date:</label>
+        <input type="date" class="form-control form-control-sm" id="bdate" required [(ngModel)]="booking.bdate" name="bdate">
+      </div>
+    <div class="form-group">
+      <label for="btime">Time:</label>
+      <input type="time" class="form-control form-control-sm" id="btime" required [(ngModel)]="booking.btime" name="btime">
+    </div>
+
+    <div class="form-group">
+      <label for="noOfSeats">No Of Seats:</label>
+      <input type="number" class="form-control form-control-sm" id="noOfSeats" required [(ngModel)]="booking.noOfSeats" name="noOfSeats">
+    </div>
+    <div class="form-group">
+        <label for="haveCoupon">have Coupon:</label>
+        <input type="checkbox" class="form-control form-control-sm"   (click)="check_en('true')">
+      </div>
+    <div class="form-group">
+        <label for="coupon">Coupon:</label>
+        <input type="text" class="form-control form-control-sm"id="coupon"  [(ngModel)]="booking.coupon" name="coupon" disabled/>
+      </div>
+  
+    <div class="form-group">
+        <label for="tid">Tid:</label>
+        <input type="text" class="form-control form-control-sm"id="tid" required [(ngModel)]="booking.tid" name="tid">
+      </div>
+    
+    <button type="submit" class="btn btn-success">Book</button>
+  </form>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="col-sm-5 col-md-6 col-lg-4">
+<app-theater-list></app-theater-list>
+</div>

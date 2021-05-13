@@ -1,0 +1,47 @@
+<head>
+<!-- Bootstrap 3 -->
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<div>
+        <button (click)="backClicked()" class="btn btn-info" style="margin-left: 10px">Home</button>
+        <button (click)="logout()" class="btn btn-info" style="margin-left: 10px"><b>Logout</b></button>
+    
+    </div>
+
+
+
+
+ <!-- Main Page Content -->
+ <div class="container">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Booked Tickets</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    
+    <div  *ngFor="let booking of booking ">
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="a80x06Wn91U" data-toggle="modal" data-target="#trailer">
+ 
+  <h2><b>Total Price: </b> {{booking.totalPrice | currency:'INR'}}</h2>
+  <h3><b>No Of Seats: </b>{{booking.noOfSeats}}</h3>
+  <h5><b>Date : </b> {{booking.bdate| date}} </h5>
+  <h5><b>Time : </b>{{booking.btime}}</h5>
+  <h5><b>Coupon : </b> {{booking.coupon}}</h5>
+  <h6><b>User ID : </b>{{booking.uid}}</h6>
+  <h6><b>Movie ID : </b>{{booking.mid}}</h6>
+  <h6><b>Ticket ID : </b>{{booking.tid}}</h6>
+ <!-- <button (click)="deleteBooking(booking.bid)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+-->
+</div>
+</div>
+</div>
